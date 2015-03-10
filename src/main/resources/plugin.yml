@@ -1,6 +1,6 @@
 name: OmniWorldMC
 main: com.omniworldmc.plugin.OmniWorldMC
-version: 1.0.6-ALPHA
+version: 1.0.8-ALPHA
 commands:
    om:
       description: The Main Command

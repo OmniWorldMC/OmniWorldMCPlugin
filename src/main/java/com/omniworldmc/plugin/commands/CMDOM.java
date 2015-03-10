@@ -20,9 +20,13 @@ public class CMDOM implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("om") && sender instanceof Player) {
             Player player = (Player) sender;
             if (player.hasPermission("om.cmd.om")) {
-                player.sendMessage(Info.CHAT_PREFIX + "Please use" + ChatColor.DARK_AQUA + " /om help " + ChatColor.GREEN + "for a full list of commands");
-                if (args.length == 1 && args[0] == "help") {
-                    player.sendMessage(Info.CHAT_PREFIX + "/rage and /healme");
+                int length = args.length;
+                if (length == 0) {
+                    player.sendMessage(Info.CHAT_PREFIX + "Please use" + ChatColor.DARK_AQUA + " /om help " + ChatColor.GREEN + "for a full list of commands");
+                } else if (length == 1 && args[0].equalsIgnoreCase("help")) {
+                    player.sendMessage(ChatColor.DARK_AQUA + "-- " + ChatColor.GREEN + "Commands" + ChatColor.DARK_AQUA + " --");
+                    player.sendMessage(ChatColor.DARK_AQUA + "/rage" + ChatColor.GREEN + " - The I AM RAGE! Command.");
+                    player.sendMessage(ChatColor.DARK_AQUA + "/healme" + ChatColor.GREEN + " - Heals the player and feeds them.");
                 }
             } else {
                 player.sendMessage(Info.NO_PERMS);
