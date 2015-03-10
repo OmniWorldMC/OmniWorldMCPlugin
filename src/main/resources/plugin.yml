@@ -1,0 +1,7 @@
+name: OmniWorldMC
+main: com.omniworldmc.plugin
+version: 1.0.ALPHA
+commands:
+   om:
+      description: The Main Command
+      usage: /<command>
