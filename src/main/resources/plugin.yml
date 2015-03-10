@@ -5,3 +5,6 @@ commands:
    om:
       description: The Main Command
       usage: /<command>
+   rage:
+      description: The Rage Command
+      usage: /<command>

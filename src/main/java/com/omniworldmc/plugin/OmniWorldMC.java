@@ -3,7 +3,6 @@ package com.omniworldmc.plugin;
 import com.omniworldmc.plugin.commands.CMDOM;
 import com.omniworldmc.plugin.commands.CMDRage;
 import com.omniworldmc.plugin.util.Permissions;
-import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.mcstats.Metrics;
