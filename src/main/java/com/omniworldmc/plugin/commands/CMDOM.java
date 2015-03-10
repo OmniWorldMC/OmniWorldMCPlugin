@@ -21,6 +21,9 @@ public class CMDOM implements CommandExecutor {
             Player player = (Player) sender;
             if (player.hasPermission("om.cmd.om")) {
                 player.sendMessage(Info.CHAT_PREFIX + "Please use" + ChatColor.DARK_AQUA + " /om help " + ChatColor.GREEN + "for a full list of commands");
+                if (args.length == 1 && args[0] == "help") {
+                    player.sendMessage(Info.CHAT_PREFIX + "/rage and /healme");
+                }
             } else {
                 player.sendMessage(Info.NO_PERMS);
             }
