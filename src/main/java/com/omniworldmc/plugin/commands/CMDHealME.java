@@ -26,6 +26,7 @@ public class CMDHealME implements CommandExecutor {
             } else {
                 player.sendMessage(Info.NO_PERMS);
             }
+            return true;
         }
         return false;
     }
