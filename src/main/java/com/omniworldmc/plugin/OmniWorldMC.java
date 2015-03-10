@@ -1,6 +1,7 @@
 package com.omniworldmc.plugin;
 
 import com.omniworldmc.plugin.commands.CMDOM;
+import com.omniworldmc.plugin.commands.CMDRage;
 import com.omniworldmc.plugin.util.Permissions;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.PluginManager;
@@ -27,12 +28,14 @@ public class OmniWorldMC extends JavaPlugin {
 
         //Register CMD's
         this.getCommand("om").setExecutor(new CMDOM(this));
+        this.getCommand("rage").setExecutor(new CMDRage(this));
 
         //Register Listeners
 
 
         //Register Permissions
         pm.addPermission(Permissions.omOm);
+        pm.addPermission(Permissions.omRage);
 
         getLogger().info("Enabled");
     }
