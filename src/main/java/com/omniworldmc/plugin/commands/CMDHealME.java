@@ -22,6 +22,7 @@ public class CMDHealME implements CommandExecutor {
             Player player = (Player) sender;
             if (player.hasPermission("om.cmd.healme")) {
                 player.setHealth(20.0);
+                player.setFoodLevel(20);
                 player.sendMessage(Info.CHAT_PREFIX + "You have been healed!");
             } else {
                 player.sendMessage(Info.NO_PERMS);
