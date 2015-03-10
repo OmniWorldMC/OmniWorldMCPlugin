@@ -1,5 +1,6 @@
 package com.omniworldmc.plugin;
 
+import com.omniworldmc.plugin.commands.CMDHealME;
 import com.omniworldmc.plugin.commands.CMDOM;
 import com.omniworldmc.plugin.commands.CMDRage;
 import com.omniworldmc.plugin.util.Permissions;
@@ -28,6 +29,7 @@ public class OmniWorldMC extends JavaPlugin {
         //Register CMD's
         this.getCommand("om").setExecutor(new CMDOM(this));
         this.getCommand("rage").setExecutor(new CMDRage(this));
+        this.getCommand("healme").setExecutor(new CMDHealME(this));
 
         //Register Listeners
 
@@ -35,6 +37,7 @@ public class OmniWorldMC extends JavaPlugin {
         //Register Permissions
         pm.addPermission(Permissions.omOm);
         pm.addPermission(Permissions.omRage);
+        pm.addPermission(Permissions.omHealMe);
 
         getLogger().info("Enabled");
     }

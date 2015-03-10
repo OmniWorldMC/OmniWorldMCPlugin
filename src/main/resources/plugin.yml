@@ -1,10 +1,13 @@
 name: OmniWorldMC
 main: com.omniworldmc.plugin.OmniWorldMC
-version: 1.0.1-ALPHA
+version: 1.0.2-ALPHA
 commands:
    om:
       description: The Main Command
       usage: /<command>
    rage:
       description: The Rage Command
+      usage: /<command>
+   rage:
+      description: The HealMe Command
       usage: /<command>
