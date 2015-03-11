@@ -1,6 +1,6 @@
 name: OmniWorldMC
 main: com.omniworldmc.plugin.OmniWorldMC
-version: 1.0.8-ALPHA
+version: 1.0.9-ALPHA
 commands:
    om:
       description: The Main Command
@@ -10,4 +10,7 @@ commands:
       usage: /<command>
    healme:
       description: The HealMe Command
+      usage: /<command>
+   die:
+      description: Just kill Legeis
       usage: /<command>
