@@ -2,6 +2,8 @@ package com.omniworldmc.plugin.commands;
 
 import com.omniworldmc.plugin.OmniWorldMC;
 import com.omniworldmc.plugin.util.Info;
+import com.omniworldmc.plugin.util.Perms;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -17,11 +19,12 @@ public class CMDRage implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if (cmd.getName().equalsIgnoreCase("rage") && sender instanceof Player) {
             Player player = (Player) sender;
-            if (player.hasPermission("om.cmd.rage")) {
+            if (player.hasPermission(Perms.RAGE)) {
                 player.performCommand("shock");
                 player.chat("I AM RAGE!");
+                player.sendRawMessage(ChatColor.YELLOW + player.getName() + " has used the powers of RAGE!");
             } else {
-                player.sendMessage(Info.NO_PERMS);
+                Info.noPerms(player, "cmd");
             }
             return true;
         }

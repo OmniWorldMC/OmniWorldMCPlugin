@@ -1,10 +1,10 @@
 package com.omniworldmc.plugin;
 
-import com.omniworldmc.plugin.commands.CMDHealME;
-import com.omniworldmc.plugin.commands.CMDKillLegeis;
 import com.omniworldmc.plugin.commands.CMDOM;
 import com.omniworldmc.plugin.commands.CMDRage;
-import com.omniworldmc.plugin.util.Permissions;
+import com.omniworldmc.plugin.listeners.EnderBowListener;
+import com.omniworldmc.plugin.util.Perms;
+import com.omniworldmc.plugin.util.Recipes;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.mcstats.Metrics;
@@ -30,16 +30,22 @@ public class OmniWorldMC extends JavaPlugin {
         //Register CMD's
         this.getCommand("om").setExecutor(new CMDOM(this));
         this.getCommand("rage").setExecutor(new CMDRage(this));
-        this.getCommand("healme").setExecutor(new CMDHealME(this));
-        this.getCommand("die").setExecutor(new CMDKillLegeis(this));
 
         //Register Listeners
+        getServer().getPluginManager().registerEvents(new EnderBowListener(this), this);
 
 
         //Register Permissions
-        pm.addPermission(Permissions.omOm);
-        pm.addPermission(Permissions.omRage);
-        pm.addPermission(Permissions.omHealMe);
+        pm.addPermission(Perms.OM);
+        pm.addPermission(Perms.OM_HELP);
+        pm.addPermission(Perms.OM_RELOAD);
+        pm.addPermission(Perms.RAGE);
+        pm.addPermission(Perms.USE_ENDERBOW);
+
+        //Ender Bow
+        Recipes recipes = new Recipes();
+        getServer().addRecipe(recipes.enderBow());
+        getServer().addRecipe(recipes.infiniteEnderBow());
 
         getLogger().info("Enabled");
     }
