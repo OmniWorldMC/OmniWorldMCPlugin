@@ -1,5 +1,6 @@
 package com.omniworldmc.plugin.util;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -11,6 +12,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Recipes {
+
+    public void init() {
+
+        Bukkit.getServer().addRecipe(enderBow());
+        Bukkit.getServer().addRecipe(infiniteEnderBow());
+    }
+
     public ShapedRecipe enderBow() {
         ItemStack bow = new ItemStack(Material.BOW);
         ItemMeta bowMeta = bow.getItemMeta();
@@ -29,6 +37,7 @@ public class Recipes {
         recipe.setIngredient('B', Material.BOW);
         return recipe;
     }
+
     public ShapedRecipe infiniteEnderBow() {
         ItemStack bow = new ItemStack(Material.BOW);
         ItemMeta bowMeta = bow.getItemMeta();

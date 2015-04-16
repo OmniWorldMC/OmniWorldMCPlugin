@@ -1,6 +1,7 @@
 package com.omniworldmc.plugin.listeners;
 
 import com.omniworldmc.plugin.OmniWorldMC;
+import com.omniworldmc.plugin.api.chat.Returns;
 import com.omniworldmc.plugin.util.Info;
 import com.omniworldmc.plugin.util.Perms;
 import org.bukkit.Material;
@@ -26,7 +27,7 @@ public class EnderBowListener implements Listener {
         if ((event.getEntity() instanceof Player)) {
             Player player = (Player)event.getEntity();
             if (!player.hasPermission(Perms.USE_ENDERBOW)) {
-                Info.noPerms(player, "enderBow");
+                Returns.noPermsReturn(player, "enderBow");
                 event.setCancelled(true);
                 return;
             }

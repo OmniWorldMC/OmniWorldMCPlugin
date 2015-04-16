@@ -1,8 +1,10 @@
 package com.omniworldmc.plugin.commands;
 
 import com.omniworldmc.plugin.OmniWorldMC;
+import com.omniworldmc.plugin.api.chat.Returns;
 import com.omniworldmc.plugin.util.Info;
 import com.omniworldmc.plugin.util.Perms;
+import com.omniworldmc.plugin.util.Recipes;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -24,7 +26,7 @@ public class CMDRage implements CommandExecutor {
                 player.chat("I AM RAGE!");
                 player.sendRawMessage(ChatColor.YELLOW + player.getName() + " has used the powers of RAGE!");
             } else {
-                Info.noPerms(player, "cmd");
+                Returns.noPermsReturn("cmd", "rage", player);
             }
             return true;
         }
