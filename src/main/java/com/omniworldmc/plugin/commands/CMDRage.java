@@ -1,7 +1,9 @@
 package com.omniworldmc.plugin.commands;
 
 import com.omniworldmc.plugin.OmniWorldMC;
+import com.omniworldmc.plugin.api.chat.Color;
 import com.omniworldmc.plugin.api.chat.Returns;
+import com.omniworldmc.plugin.api.gui.Title;
 import com.omniworldmc.plugin.util.Info;
 import com.omniworldmc.plugin.util.Perms;
 import com.omniworldmc.plugin.util.Recipes;
@@ -24,9 +26,12 @@ public class CMDRage implements CommandExecutor {
             if (player.hasPermission(Perms.RAGE)) {
                 player.performCommand("shock");
                 player.chat("I AM RAGE!");
+                Title title = new Title("RAGE!");
+                title.setTitleColor(Color.c("e"));
+                title.broadcast();
                 player.sendRawMessage(ChatColor.YELLOW + player.getName() + " has used the powers of RAGE!");
             } else {
-                Returns.noPermsReturn("cmd", "rage", player);
+                player.sendMessage(Returns.NO_PERMS);
             }
             return true;
         }

@@ -1,6 +1,7 @@
 package com.omniworldmc.plugin.commands;
 
 import com.omniworldmc.plugin.OmniWorldMC;
+import com.omniworldmc.plugin.api.chat.Color;
 import com.omniworldmc.plugin.api.chat.Returns;
 import com.omniworldmc.plugin.util.Info;
 import com.omniworldmc.plugin.util.Perms;
@@ -37,20 +38,26 @@ public class CMDOM implements CommandExecutor {
                         player.sendMessage(ChatColor.DARK_AQUA + "/rage" + ChatColor.GREEN + " - Summons the power of RAGE!");
                     }
                 } else {
-                    Returns.noPermsReturn("cmd", "om help", player);
+                    player.sendMessage(Returns.NO_PERMS);
                 }
             } else if (length == 1 && args[0].equalsIgnoreCase("reload")) {
                 if (player.hasPermission(Perms.OM_RELOAD)) {
-                    configGetter.reloadConfig();
-                    player.sendMessage(Info.CHAT_PREFIX + "Config Reloaded.");
+                    try {
+                        configGetter.reloadConfig();
+                        player.sendMessage(Returns.CHAT_PREFIX + "Config Reloaded.");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        player.sendMessage(Returns.CHAT_PREFIX + Color.c("c") + "A fatal error has occurred while attempting to reload the config.");
+                        player.sendMessage(Returns.CHAT_PREFIX + Color.c("c") + "Please report this to Chaka.");
+                    }
                 } else {
-                    Returns.noPermsReturn("cmd", "om reload", player);
+                    player.sendMessage(Returns.NO_PERMS);
                 }
             } else {
                 if (player.hasPermission(Perms.OM)) {
                     player.sendMessage(Info.CHAT_PREFIX + "Please use" + ChatColor.DARK_AQUA  + " /om help " + ChatColor.GREEN + "for a list of commands.");
                 } else {
-                    Returns.noPermsReturn("cmd", "om", player);
+                    player.sendMessage(Returns.NO_PERMS);
                 }
             }
             return true;

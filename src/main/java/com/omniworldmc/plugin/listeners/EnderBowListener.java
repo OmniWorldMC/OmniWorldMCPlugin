@@ -27,7 +27,7 @@ public class EnderBowListener implements Listener {
         if ((event.getEntity() instanceof Player)) {
             Player player = (Player)event.getEntity();
             if (!player.hasPermission(Perms.USE_ENDERBOW)) {
-                Returns.noPermsReturn(player, "enderBow");
+                player.sendMessage(Returns.NO_PERMS_ENDER_BOW);
                 event.setCancelled(true);
                 return;
             }
