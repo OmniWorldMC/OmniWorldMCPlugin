@@ -1,7 +1,7 @@
 package com.omniworldmc.plugin;
 
-import com.omniworldmc.plugin.commands.CMDOM;
-import com.omniworldmc.plugin.commands.CMDRage;
+import com.omniworldmc.plugin.commands.CmdOm;
+import com.omniworldmc.plugin.commands.CmdRage;
 import com.omniworldmc.plugin.listeners.EnderBowListener;
 import com.omniworldmc.plugin.util.Perms;
 import com.omniworldmc.plugin.util.Recipes;
@@ -37,9 +37,9 @@ public class OmniWorldMC extends JavaPlugin {
         }
 
         try {
-            this.getCommand("om").setExecutor(new CMDOM(this));
+            this.getCommand("om").setExecutor(new CmdOm(this));
             if (rageCommand == true) {
-                this.getCommand("rage").setExecutor(new CMDRage(this));
+                this.getCommand("rage").setExecutor(new CmdRage(this));
             }
             if (debugMode == true) {
                 getLogger().info("Registered Commands.");

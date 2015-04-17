@@ -3,23 +3,19 @@ package com.omniworldmc.plugin.commands;
 import com.omniworldmc.plugin.OmniWorldMC;
 import com.omniworldmc.plugin.api.chat.Color;
 import com.omniworldmc.plugin.api.chat.Returns;
-import com.omniworldmc.plugin.util.Info;
 import com.omniworldmc.plugin.util.Perms;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.io.IOException;
-
-public class CMDOM implements CommandExecutor {
+public class CmdOm implements CommandExecutor {
 
     private final OmniWorldMC pl;
     OmniWorldMC configGetter;
 
-    public CMDOM(OmniWorldMC pl) {
+    public CmdOm(OmniWorldMC pl) {
         this.pl = pl;
         configGetter = pl;
     }
@@ -55,7 +51,7 @@ public class CMDOM implements CommandExecutor {
                 }
             } else {
                 if (player.hasPermission(Perms.OM)) {
-                    player.sendMessage(Info.CHAT_PREFIX + "Please use" + ChatColor.DARK_AQUA  + " /om help " + ChatColor.GREEN + "for a list of commands.");
+                    player.sendMessage(Returns.CHAT_PREFIX + "Please use" + ChatColor.DARK_AQUA  + " /om help " + ChatColor.GREEN + "for a list of commands.");
                 } else {
                     player.sendMessage(Returns.NO_PERMS);
                 }

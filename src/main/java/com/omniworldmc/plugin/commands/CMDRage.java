@@ -4,19 +4,17 @@ import com.omniworldmc.plugin.OmniWorldMC;
 import com.omniworldmc.plugin.api.chat.Color;
 import com.omniworldmc.plugin.api.chat.Returns;
 import com.omniworldmc.plugin.api.gui.Title;
-import com.omniworldmc.plugin.util.Info;
 import com.omniworldmc.plugin.util.Perms;
-import com.omniworldmc.plugin.util.Recipes;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class CMDRage implements CommandExecutor {
+public class CmdRage implements CommandExecutor {
     private final OmniWorldMC pl;
 
-    public CMDRage(OmniWorldMC pl) {
+    public CmdRage(OmniWorldMC pl) {
         this.pl = pl;
     }
     @Override

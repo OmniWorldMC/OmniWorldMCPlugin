@@ -1,9 +1,5 @@
 package com.omniworldmc.plugin.api.chat;
 
-import org.bukkit.ChatColor;
-import org.bukkit.Sound;
-import org.bukkit.entity.Player;
-
 public class Returns {
 
     /**
@@ -14,10 +10,10 @@ public class Returns {
     /**
      * No permission message.
      */
-    public static final String NO_PERMS = CHAT_PREFIX + Color.c("4") + "You do not have permission for that command.";
+    public static final String NO_PERMS = CHAT_PREFIX + Color.c("c") + "You do not have permission for that command.";
 
     /**
      * Ender Bow No Perms.
      */
-    public static final String NO_PERMS_ENDER_BOW = CHAT_PREFIX + Color.c("4") + "You do not have permission to use the Ender Bow.";
+    public static final String NO_PERMS_ENDER_BOW = CHAT_PREFIX + Color.c("c") + "You do not have permission to use the Ender Bow.";
 }
