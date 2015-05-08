@@ -41,19 +41,19 @@ public class Color {
      * @param code
      * @return ChatColor
      */
-    public static ChatColor c(String code) {
+    public static ChatColor cs(int code) {
         switch (code) {
-            case "a":
+            case 1:
                 return ChatColor.GREEN;
-            case "b":
+            case 2:
                 return ChatColor.AQUA;
-            case "c":
+            case 3:
                 return ChatColor.RED;
-            case "d":
+            case 4:
                 return ChatColor.LIGHT_PURPLE;
-            case "e":
+            case 5:
                 return ChatColor.YELLOW;
-            case "f":
+            case 6:
                 return ChatColor.WHITE;
         }
         return ChatColor.RESET;
@@ -64,19 +64,19 @@ public class Color {
      * @param code
      * @return ChatColor
      */
-    public static ChatColor f(String code) {
+    public static ChatColor f(int code) {
         switch (code) {
-            case "k":
+            case 1:
                 return ChatColor.MAGIC;
-            case "l":
+            case 2:
                 return ChatColor.BOLD;
-            case "m":
+            case 3:
                 return ChatColor.STRIKETHROUGH;
-            case "n":
+            case 4:
                 return ChatColor.UNDERLINE;
-            case "o":
+            case 5:
                 return ChatColor.ITALIC;
-            case "r":
+            case 6:
                 return ChatColor.RESET;
         }
         return ChatColor.RESET;

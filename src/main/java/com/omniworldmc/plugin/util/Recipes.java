@@ -23,7 +23,7 @@ public class Recipes {
         ItemStack bow = new ItemStack(Material.BOW);
         ItemMeta bowMeta = bow.getItemMeta();
 
-        List<String> lore = new ArrayList<>();
+        List<String> lore = new ArrayList<String>();
         lore.add(ChatColor.GRAY + "Teleportation I");
 
         bowMeta.setDisplayName(ChatColor.AQUA + "Ender Bow");

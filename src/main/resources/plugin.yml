@@ -1,10 +1,4 @@
 name: OmniWorldMC
 main: com.omniworldmc.plugin.OmniWorldMC
-version: 1.8-15.4.17-R0.0
-commands:
-   om:
-      description: The Main Command
-      usage: /<command>
-   rage:
-      description: The Rage Command
-      usage: /<command>
+version: 1.0.0-RELEASE
+author: Chaka
