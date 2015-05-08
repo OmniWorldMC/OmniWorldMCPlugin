@@ -25,26 +25,23 @@ public class EnderBowListener implements Listener {
     public void onShootBow(EntityShootBowEvent event) {
         if ((event.getEntity() instanceof Player)) {
             Player player = (Player)event.getEntity();
-            if (!player.hasPermission(Perms.USE_ENDERBOW)) {
-                player.sendMessage(Returns.NO_PERMS_ENDER_BOW);
-                event.setCancelled(true);
-                return;
-            }
             if ((event.getBow().getEnchantmentLevel(Enchantment.ARROW_INFINITE) == 2) || (event.getBow().getEnchantmentLevel(Enchantment.ARROW_INFINITE) == 3)) {
-                if (player.getInventory().contains(Material.ENDER_PEARL)) {
-                    if (event.getBow().getEnchantmentLevel(Enchantment.ARROW_INFINITE) == 2) {
-                        event.setCancelled(true);
-                        player.getInventory().removeItem(new ItemStack[] { new ItemStack(Material.ENDER_PEARL, 1) });
-                        ((EnderPearl)player.launchProjectile(EnderPearl.class)).setVelocity(event.getProjectile().getVelocity().multiply(1.1D));
-                        player.playSound(player.getLocation(), Sound.ENDERMAN_TELEPORT, 1.0F, 1.0F);
-                    } else if (event.getBow().getEnchantmentLevel(Enchantment.ARROW_INFINITE) == 3) {
-                        event.setCancelled(true);
-                        ((EnderPearl)player.launchProjectile(EnderPearl.class)).setVelocity(event.getProjectile().getVelocity().multiply(1.1D));
-                        player.playSound(player.getLocation(), Sound.ENDERMAN_TELEPORT, 1.0F, 1.0F);
+                if (player.hasPermission(Perms.USE_ENDERBOW)) {
+                    if (player.getInventory().contains(Material.ENDER_PEARL)) {
+                        if (event.getBow().getEnchantmentLevel(Enchantment.ARROW_INFINITE) == 2) {
+                            event.setCancelled(true);
+                            player.getInventory().removeItem(new ItemStack[] { new ItemStack(Material.ENDER_PEARL, 1) });
+                            ((EnderPearl)player.launchProjectile(EnderPearl.class)).setVelocity(event.getProjectile().getVelocity().multiply(1.1D));
+                            player.playSound(player.getLocation(), Sound.ENDERMAN_TELEPORT, 1.0F, 1.0F);
+                        } else if (event.getBow().getEnchantmentLevel(Enchantment.ARROW_INFINITE) == 3) {
+                            event.setCancelled(true);
+                            ((EnderPearl)player.launchProjectile(EnderPearl.class)).setVelocity(event.getProjectile().getVelocity().multiply(1.1D));
+                            player.playSound(player.getLocation(), Sound.ENDERMAN_TELEPORT, 1.0F, 1.0F);
+                        }
                     }
-                }
-                else {
-                    event.setCancelled(true);
+                    else {
+                        event.setCancelled(true);
+                    }
                 }
             }
             else {}

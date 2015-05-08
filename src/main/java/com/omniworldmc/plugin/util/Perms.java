@@ -9,16 +9,10 @@ public class Perms {
     public static void init() {
         PluginManager pm = Bukkit.getServer().getPluginManager();
 
-        pm.addPermission(OM);
-        pm.addPermission(OM_HELP);
-        pm.addPermission(OM_RELOAD);
-        pm.addPermission(RAGE);
+        pm.addPermission(OM_SHOW_DEATH_LOC);
         pm.addPermission(USE_ENDERBOW);
     }
 
-    public static Permission OM = new Permission("om.cmd.om");
-    public static Permission OM_HELP = new Permission("om.cmd.om.help");
-    public static Permission OM_RELOAD = new Permission("om.cmd.om.reload");
-    public static Permission RAGE = new Permission("om.cmd.rage");
+    public static Permission OM_SHOW_DEATH_LOC = new Permission("om.showdeathlocation");
     public static Permission USE_ENDERBOW = new Permission("om.use.enderbow");
 }
