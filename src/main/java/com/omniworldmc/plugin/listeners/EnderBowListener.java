@@ -37,6 +37,7 @@ public class EnderBowListener implements Listener {
                             event.setCancelled(true);
                             ((EnderPearl)player.launchProjectile(EnderPearl.class)).setVelocity(event.getProjectile().getVelocity().multiply(1.1D));
                             player.playSound(player.getLocation(), Sound.ENDERMAN_TELEPORT, 1.0F, 1.0F);
+                            event.getBow().setDurability((short) 384);
                         }
                     }
                     else {

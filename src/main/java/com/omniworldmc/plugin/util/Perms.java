@@ -10,11 +10,11 @@ public class Perms {
         PluginManager pm = Bukkit.getServer().getPluginManager();
 
         pm.addPermission(OM_SHOW_DEATH_LOC);
-        pm.addPermission(OM_USE_VIEN_MINER);
+        pm.addPermission(OM_USE_VEIN_MINER);
         pm.addPermission(USE_ENDERBOW);
     }
 
     public static Permission OM_SHOW_DEATH_LOC = new Permission("om.showdeathlocation");
-    public static Permission OM_USE_VIEN_MINER = new Permission("om.use.vienminer");
+    public static Permission OM_USE_VEIN_MINER = new Permission("om.use.veinminer");
     public static Permission USE_ENDERBOW = new Permission("om.use.enderbow");
 }

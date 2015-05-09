@@ -24,7 +24,7 @@ public class BlockListener implements Listener {
         Player player = event.getPlayer();
         if (player.getItemInHand() == Items.donorFortunePick() || player.getItemInHand() == Items.donorPickSilk()) {
             if (block.getType().equals(Material.STONE) || block.getType().equals(Material.COBBLESTONE)) {
-                if (player.hasPermission(Perms.OM_USE_VIEN_MINER)) {
+                if (player.hasPermission(Perms.OM_USE_VEIN_MINER)) {
                     int[] location = {0,0,0};
                     String locationWorld = "Eden";
                     location[0]=block.getLocation().getBlockX();
