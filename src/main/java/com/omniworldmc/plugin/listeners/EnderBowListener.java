@@ -42,6 +42,8 @@ public class EnderBowListener implements Listener {
                     else {
                         event.setCancelled(true);
                     }
+                } else {
+                    player.sendMessage(Returns.NO_PERMS_ENDER_BOW);
                 }
             }
             else {}
