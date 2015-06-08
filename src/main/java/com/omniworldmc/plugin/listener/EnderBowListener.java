@@ -1,8 +1,8 @@
-package com.omniworldmc.plugin.listeners;
+package com.omniworldmc.plugin.listener;
 
 import com.omniworldmc.plugin.OmniWorldMC;
-import com.omniworldmc.plugin.api.chat.Returns;
-import com.omniworldmc.plugin.util.Perms;
+import com.omniworldmc.plugin.lib.ChatLib;
+import com.omniworldmc.plugin.lib.PermLib;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.enchantments.Enchantment;
@@ -24,30 +24,28 @@ public class EnderBowListener implements Listener {
     @EventHandler
     public void onShootBow(EntityShootBowEvent event) {
         if ((event.getEntity() instanceof Player)) {
-            Player player = (Player)event.getEntity();
+            Player player = (Player) event.getEntity();
             if ((event.getBow().getEnchantmentLevel(Enchantment.ARROW_INFINITE) == 2) || (event.getBow().getEnchantmentLevel(Enchantment.ARROW_INFINITE) == 3)) {
-                if (player.hasPermission(Perms.USE_ENDERBOW)) {
+                if (player.hasPermission(PermLib.USE_ENDERBOW)) {
                     if (player.getInventory().contains(Material.ENDER_PEARL)) {
                         if (event.getBow().getEnchantmentLevel(Enchantment.ARROW_INFINITE) == 2) {
                             event.setCancelled(true);
-                            player.getInventory().removeItem(new ItemStack[] { new ItemStack(Material.ENDER_PEARL, 1) });
-                            ((EnderPearl)player.launchProjectile(EnderPearl.class)).setVelocity(event.getProjectile().getVelocity().multiply(1.1D));
+                            player.getInventory().removeItem(new ItemStack[] { new ItemStack(Material.ENDER_PEARL, 1)});
+                            ((EnderPearl) player.launchProjectile(EnderPearl.class)).setVelocity(event.getProjectile().getVelocity().multiply(1.1D));
                             player.playSound(player.getLocation(), Sound.ENDERMAN_TELEPORT, 1.0F, 1.0F);
                         } else if (event.getBow().getEnchantmentLevel(Enchantment.ARROW_INFINITE) == 3) {
                             event.setCancelled(true);
-                            ((EnderPearl)player.launchProjectile(EnderPearl.class)).setVelocity(event.getProjectile().getVelocity().multiply(1.1D));
+                            ((EnderPearl) player.launchProjectile(EnderPearl.class)).setVelocity(event.getProjectile().getVelocity().multiply(1.1D));
                             player.playSound(player.getLocation(), Sound.ENDERMAN_TELEPORT, 1.0F, 1.0F);
                             event.getBow().setDurability((short) 384);
                         }
-                    }
-                    else {
+                    } else {
                         event.setCancelled(true);
                     }
                 } else {
-                    player.sendMessage(Returns.NO_PERMS_ENDER_BOW);
+                    player.sendMessage(ChatLib.NO_PERMS_ENDERBOW);
                 }
-            }
-            else {}
+            } else {}
         }
     }
 }
