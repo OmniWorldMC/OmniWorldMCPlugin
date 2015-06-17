@@ -1,7 +1,7 @@
 package com.omniworldmc.plugin;
 
 import com.omniworldmc.plugin.command.OmCommand;
-import com.omniworldmc.plugin.lib.RecipeLib;
+import com.omniworldmc.plugin.handler.PlayerInteractHandler;
 import com.omniworldmc.plugin.listener.EnderBowListener;
 import com.omniworldmc.plugin.listener.PlayerListener;
 import org.bukkit.plugin.PluginManager;
@@ -12,9 +12,10 @@ import java.util.logging.Logger;
 
 public class OmniWorldMC extends JavaPlugin {
 
+    PlayerInteractHandler playerInteractHandler;
+
     private final Logger logger;
     private PluginManager pm = this.getServer().getPluginManager();
-    private RecipeLib recipeLib;
 
     public OmniWorldMC(Logger logger) {
         this.logger = logger;
@@ -23,12 +24,12 @@ public class OmniWorldMC extends JavaPlugin {
     @Override
     public void onEnable() {
 
+        this.playerInteractHandler = new PlayerInteractHandler();
+
         this.pm.registerEvents(new EnderBowListener(this), this);
         this.pm.registerEvents(new PlayerListener(this), this);
 
         this.getCommand("om").setExecutor(new OmCommand(this));
-
-        this.recipeLib.init(this);
 
         this.logger.log(Level.INFO, "Enabled");
     }
@@ -37,5 +38,9 @@ public class OmniWorldMC extends JavaPlugin {
     public void onDisable() {
 
         this.logger.log(Level.INFO, "Disabled");
+    }
+
+    public PlayerInteractHandler getPlayerInteractHandler() {
+        return playerInteractHandler;
     }
 }
