@@ -1,6 +1,7 @@
 package com.omniworldmc.plugin.listener;
 
 import com.omniworldmc.plugin.OmniWorldMC;
+import com.omniworldmc.plugin.lib.PermLib;
 import com.omniworldmc.plugin.lib.PowerUtils;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -81,8 +82,23 @@ public class BlockBreakListener implements Listener {
                         }
                         if ((enchant == null) || (
                                 ((PowerUtils.canSilkTouchMine(blockMat)) && (PowerUtils.canFortuneMine(blockMat))) || ((useHammer) || (
-                                        ((!PowerUtils.canFortuneDig(blockMat)) || (!PowerUtils.canFortuneDig(blockMat))) && (useExcavator)))))
-                        {
+                                        ((!PowerUtils.canFortuneDig(blockMat)) || (!PowerUtils.canFortuneDig(blockMat))) && (useExcavator))))) {
+                            e.breakNaturally(handItem);
+                        } else {
+                            ItemStack drop = PowerUtils.processEnchantsAndReturnItemStack(enchant, enchantLevel, e);
+                            if (drop != null) {
+                                e.getWorld().dropItemNaturally(blockLoc, drop);
+                                e.setType(Material.AIR);
+                            } else {
+                                e.breakNaturally(handItem);
+                            }
+                        }
+                        if ((this.useDurabilityPerBlock) || (!player.hasPermission(PermLib.DP_HD))) {
+                            if (curDur++ >= maxDur) {
+                                break;
+                            }
+                            handItem.setDurability(curDur);
+                        }
                     }
                 }
             }

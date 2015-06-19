@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class CraftItemExcavator {
     public OmniWorldMC plugin;
     public static String loreString = "Acts like the TC Excavator!";
-    ItemStack DiamondExcavator = new ItemStack(Material.DIAMOND_SPADE, 1);
+    public ItemStack DiamondExcavator = new ItemStack(Material.DIAMOND_SPADE, 1);
     ShapedRecipe DiamondExcavatorRecipe;
 
     public CraftItemExcavator(OmniWorldMC plugin) {

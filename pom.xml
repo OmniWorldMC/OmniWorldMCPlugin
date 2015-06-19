@@ -6,7 +6,7 @@
 
     <groupId>com.omniworldmc.plugin</groupId>
     <artifactId>OmniWorldMC</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
 
     <repositories>
         <repository>
@@ -19,7 +19,7 @@
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.8-R0.1-SNAPSHOT</version>
+            <version>1.8.1-R0.1-SNAPSHOT</version>
             <type>jar</type>
             <scope>provided</scope>
         </dependency>

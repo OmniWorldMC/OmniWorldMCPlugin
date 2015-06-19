@@ -7,7 +7,7 @@ public class PlayerInteractHandler {
 
     public PlayerInteractListener listener;
 
-    public void Init(OmniWorldMC plugin) {
+    public void init(OmniWorldMC plugin) {
         this.listener = new PlayerInteractListener(plugin);
     }
 

@@ -199,12 +199,12 @@ public class PowerUtils {
         boolean canCraft = false;
         switch (itemType) {
             case MILK_BUCKET:
-                if (player.hasPermission("tconstruct.craft.hammer.diamond")) {
+                if (player.hasPermission(PermLib.DP_CRAFT_DIAMOND_HAMMER)) {
                     canCraft = true;
                 }
                 break;
             case MELON_STEM:
-                if (player.hasPermission("tconstruct.craft.excavator.diamond")) {
+                if (player.hasPermission(PermLib.DP_CRAFT_DIAMOND_EXCAVATOR)) {
                     canCraft = true;
                 }
                 break;
@@ -216,12 +216,12 @@ public class PowerUtils {
         boolean canUse = false;
         switch (player.getItemInHand().getType()) {
             case MILK_BUCKET:
-                if (player.hasPermission("tconstruct.use.hammer.diamond")) {
+                if (player.hasPermission(PermLib.DP_USE_DIAMOND_HAMMER)) {
                     canUse = true;
                 }
                 break;
             case MELON_STEM:
-                if (player.hasPermission("tconstruct.use.excavator.diamond")) {
+                if (player.hasPermission(PermLib.DP_USE_DIAMOND_EXCAVATOR)) {
                     canUse = true;
                 }
                 break;
@@ -233,12 +233,12 @@ public class PowerUtils {
         boolean canEnchant = false;
         switch (itemType) {
             case MILK_BUCKET:
-                if (player.hasPermission("tconstruct.enchant.hammer.diamond")) {
+                if (player.hasPermission(PermLib.DP_ENCHANT_DIAMOND_HAMMER)) {
                     canEnchant = true;
                 }
                 break;
             case MELON_STEM:
-                if (player.hasPermission("tconstruct.enchant.excavator.diamond")) {
+                if (player.hasPermission(PermLib.DP_ENCHANT_DIAMOND_EXCAVATOR)) {
                     canEnchant = true;
                 }
                 break;

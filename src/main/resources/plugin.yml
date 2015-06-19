@@ -1,7 +1,8 @@
 name: OmniWorldMC
 main: com.omniworldmc.plugin.OmniWorldMC
-version: 1.1.0
-author: Chaka
+version: 1.1.1
+author: OmniWorldMC Development Team
+authors: [Chaka, MrL314, creatorsuperman]
 commands:
    om:
       description: The main command.

@@ -6,8 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class Reference
-{
+public class Reference {
     public static HashMap<Material, ArrayList<Material>> MINABLE = new HashMap();
     public static ArrayList<Material> DIGGABLE = new ArrayList();
     public static ArrayList<Material> MINABLE_SILKTOUCH = new ArrayList(Arrays.asList(new Material[]{
@@ -30,8 +29,7 @@ public class Reference
     public static HashMap<Material, Material> MINABLE_FORTUNE = new HashMap();
     public static HashMap<Material, Material> DIGGABLE_FORTUNE;
 
-    static
-    {
+    static {
         MINABLE_FORTUNE.put(Material.COAL_ORE, Material.COAL);
         MINABLE_FORTUNE.put(Material.REDSTONE_ORE, Material.REDSTONE);
         MINABLE_FORTUNE.put(Material.GLOWING_REDSTONE_ORE, Material.REDSTONE);

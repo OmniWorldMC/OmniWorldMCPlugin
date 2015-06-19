@@ -13,7 +13,7 @@ public class CraftItemHammer {
 
     public OmniWorldMC plugin;
     public static String loreString = "Acts like the TC Hammer!";
-    ItemStack DiamondHammer = new ItemStack(Material.DIAMOND_PICKAXE, 1);
+    public ItemStack DiamondHammer = new ItemStack(Material.DIAMOND_PICKAXE, 1);
     ShapedRecipe DiamondHammerRecipe;
 
     public CraftItemHammer(OmniWorldMC plugin) {
